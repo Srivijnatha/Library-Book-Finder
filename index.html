@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Book Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔥 HEADER -->
+<header class="header">
+  <h2 class="logo">📚 Library Finder</h2>
+  <nav>
+    <button onclick="goToPage(1)">🏠 Home</button>
+    <button onclick="goToPage(3)">▶ Play Now</button>
+    <button onclick="goToPage(2)">📜 Learn Concept</button>
+  </nav>
+</header>
+
+<!-- PAGE 1 (HOME) -->
+<div id="page1" class="page active">
+  <div class="hero">
+    <h1>Find Your Book Smarter</h1>
+    <p>
+      Experience intelligent navigation using the <b>A* Algorithm</b>.
+      Select a book, set your start, and watch the smartest path unfold.
+    </p>
+
+    <div class="hero-buttons">
+      <button onclick="goToPage(3)">▶ Play Now</button>
+      <button onclick="goToPage(2)">📜 Learn Concept</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 (LEARN CONCEPT) -->
+<div id="page2" class="page">
+
+  <h1 class="section-title">📜 A* Algorithm Explained</h1>
+
+  <!-- THEORY -->
+  <div class="theory-box">
+    <h2>🧠 What is A* Algorithm?</h2>
+    <p>
+      A* (A-Star) is a powerful pathfinding algorithm used to find the 
+      <b>shortest and most efficient path</b> between two points.
+    </p>
+
+    <p>It works using:</p>
+
+    <div class="formula">
+      f(n) = g(n) + h(n)
+    </div>
+
+    <p>
+      <b>g(n)</b> → Cost from start  
+      <br><b>h(n)</b> → Estimated distance to goal  
+      <br><b>f(n)</b> → Total cost
+    </p>
+  </div>
+
+  <!-- ALGORITHM STEPS -->
+  <h2 class="sub-title">⚙️ Step-by-Step Procedure</h2>
+
+  <div class="steps">
+
+    <div class="step-card">
+      <h3>STEP 01</h3>
+      <h2>Initialize</h2>
+      <p>Start node is added to the open list with initial cost.</p>
+    </div>
+
+    <div class="step-card">
+      <h3>STEP 02</h3>
+      <h2>Explore</h2>
+      <p>Neighbors are checked and evaluated using cost function.</p>
+    </div>
+
+    <div class="step-card">
+      <h3>STEP 03</h3>
+      <h2>Select Best</h2>
+      <p>The node with lowest f(n) is chosen for next step.</p>
+    </div>
+
+    <div class="step-card">
+      <h3>STEP 04</h3>
+      <h2>Repeat</h2>
+      <p>This continues until the goal node is reached.</p>
+    </div>
+
+  </div>
+
+  <!-- PROJECT WORKING -->
+  <h2 class="sub-title">🎯 How It Works in Library Finder</h2>
+
+  <div class="working-box">
+
+    <p>➡ You select a <b>starting position</b> in the grid.</p>
+    <p>➡ You choose a <b>book location</b> as destination.</p>
+    <p>➡ The system evaluates possible paths using A* logic.</p>
+    <p>➡ Obstacles and invalid paths are ignored.</p>
+    <p>➡ The optimal route is displayed step-by-step.</p>
+
+    <p class="highlight-text">
+      Result: The shortest and smartest path is always selected.
+    </p>
+
+  </div>
+
+  <!-- USER FLOW (NEW SECTION 🔥) -->
+  <h2 class="sub-title">📌 Procedure (User Flow)</h2>
+
+  <div class="steps">
+
+    <div class="step-card">
+      <h3>STEP 01</h3>
+      <h2>Choose Book</h2>
+      <p>Select the required subject from the dropdown list.</p>
+    </div>
+
+    <div class="step-card">
+      <h3>STEP 02</h3>
+      <h2>Select Start</h2>
+      <p>Click on a grid cell to place your starting position.</p>
+    </div>
+
+    <div class="step-card">
+      <h3>STEP 03</h3>
+      <h2>Run Algorithm</h2>
+      <p>The system applies A* logic to compute best route.</p>
+    </div>
+
+    <div class="step-card">
+      <h3>STEP 04</h3>
+      <h2>Follow Path</h2>
+      <p>The user is guided step-by-step to reach the book.</p>
+    </div>
+
+  </div>
+
+  <button class="back-btn" onclick="goToPage(1)">⬅ Back</button>
+
+</div>
+
+<!-- PAGE 3 (GAME) -->
+<div id="page3" class="page">
+
+  <h2>📚 Find Your Book</h2>
+
+  <select id="bookSelect">
+    <option value="">Select Book</option>
+    <option value="AI">AI</option>
+    <option value="DBMS">DBMS</option>
+    <option value="DSA">DSA</option>
+    <option value="OS">OS</option>
+    <option value="CN">CN</option>
+    <option value="ML">ML</option>
+    <option value="SE">SE</option>
+    <option value="JAVA">JAVA</option>
+    <option value="PYTHON">PYTHON</option>
+    <option value="C++">C++</option>
+  </select>
+
+  <div id="grid"></div>
+
+  <div class="controls">
+    <button onclick="findPath()">Find Path</button>
+    <button onclick="resetGrid()">Reset</button>
+    <button onclick="goToPage(1)">⬅ Back</button>
+  </div>
+
+  <p id="info"></p>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
